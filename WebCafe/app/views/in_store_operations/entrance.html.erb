@@ -1,0 +1,12 @@
+<header>
+  <h1><%= @CafeName %></h1>
+</header>
+store entrance here.<br>
+please enter your third-place!<br>
+enjoy!
+<%= form_tag({ controller: :in_store_operations, action: :welcome }, id: :welcome_form, class: :welcome) do %>
+  <%= text_field_tag :customer_name, '', size: 30 %> さん、ようこそ！<br>
+  <%= submit_tag '入店' %>
+<% end %>
+
+
