@@ -1,1 +1,9 @@
-<h1><%= @customer_name + "さん、こんにちは！" %></h1>
+<h1><%= (@customer_name.nil? ? '' : @customer_name) + "(welcome voice)" %></h1>
+<!-- 将来的にはDBと連携 options_from_collection_for_select を使う -->
+<%= form_tag({ controller: :in_store_operations, action: :reply }, id: :reply, class: :reply) do %>
+<%= select_tag 'customer_voice', options_for_select(
+  { 'hello' => 1, 'Long time no see!' => 2, 'test comment 3' => 3 }, 3
+) %>
+  <%= submit_tag 'コメント' %>
+<% end %>
+
