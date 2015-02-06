@@ -1,0 +1,14 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  situation: Welcome
+  voice: Good Morning!
+
+two:
+  situation: Welcome
+  voice: It’s cold today.
+
+three:
+  situation: Welcome
+  voice: What’s new ?
+
