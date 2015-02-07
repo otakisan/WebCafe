@@ -1,2 +1,7 @@
 <p>(menu page)</p>
-
+<%= form_tag({ controller: :in_store_operations, action: :order }, id: :order, class: :order) do %>
+<%= select_tag 'order_product', options_for_select(
+  { 'Latte' => 1, 'Drip' => 2, 'Frappuccino' => 3 }, 3
+) %>
+  <%= submit_tag 'Order' %>
+<% end %>
