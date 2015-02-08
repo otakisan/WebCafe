@@ -1,0 +1,14 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+sakura2015:
+  name: Sakura 2015
+  start_at: 2015-02-15 00:00:00
+  end_at: 2015-03-17 23:59:59
+  description: Caramelly Sakura
+
+valentine2015:
+  name: Valentine 2015
+  start_at: 2015-01-14 00:00:00
+  end_at: 2015-02-14 23:59:59
+  description: Chocolate Orange
+

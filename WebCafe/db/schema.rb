@@ -11,11 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150204135737) do
+ActiveRecord::Schema.define(version: 20150207065637) do
 
   create_table "customer_voices", force: true do |t|
     t.string   "situation"
     t.string   "voice"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "menu_details", force: true do |t|
+    t.integer  "menu_id"
+    t.integer  "product_id"
+    t.string   "recommended"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "menu_details", ["menu_id"], name: "index_menu_details_on_menu_id"
+  add_index "menu_details", ["product_id"], name: "index_menu_details_on_product_id"
+
+  create_table "menus", force: true do |t|
+    t.string   "name"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", force: true do |t|
+    t.string   "name"
+    t.string   "category"
+    t.string   "limited"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.string   "remarks"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

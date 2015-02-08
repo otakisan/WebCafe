@@ -1,0 +1,26 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+caffelatte:
+  name: Caffe Latte
+  category: drink
+  limited: regular
+  start_at: 1996-02-07 15:31:21
+  end_at: 2999-02-07 15:31:21
+  remarks: Italian Journeys
+
+caffeamericano:
+  name: Caffe Americano
+  category: drink
+  limited: regular
+  start_at: 1996-02-07 15:31:21
+  end_at: 2999-02-07 15:31:21
+  remarks: American Espresso
+
+vanillacremefrappuccino:
+  name: Vanilla Creme Frappuccino
+  category: drink
+  limited: regular
+  start_at: 1996-02-07 15:31:21
+  end_at: 2999-02-07 15:31:21
+  remarks: Rich Vanilla Beans
+

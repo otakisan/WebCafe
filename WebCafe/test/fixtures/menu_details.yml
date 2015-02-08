@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+sakura2015caffelatte:
+  menu: sakura2015 
+  product: caffelatte
+  recommended: normal
+  description: standard
+
+sakura2015caffeamericano:
+  menu: sakura2015
+  product: caffeamericano
+  recommended: normal
+  description: standard
+
+sakura2015vanillacremefrappuccino:
+  menu: sakura2015
+  product: vanillacremefrappuccino
+  recommended: normal
+  description: standard
