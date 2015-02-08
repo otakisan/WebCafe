@@ -12,7 +12,7 @@ class InStoreOperationsController < ApplicationController
     today_repeat = gettodayrepeat()
     @welcome_voice = BaristaVoiceGenerator.new.welcomevoice(today_repeat)
     @customer_name = params["customer_name"]
-    @customer_voices = CustomerVoice.all
+    @customer_voices = CustomerVoice.welcomevoices
     logger.debug((@customer_name.nil? ? '' : @customer_name) + ", welcome here!")
   end
 
@@ -43,12 +43,17 @@ class InStoreOperationsController < ApplicationController
     incrementtodayrepeat
 
     #@product_id = params["order_product"]
-    product_id = params["order_product"] || ""
-    product = Product.find(product_id)
+    product_id = params["order_product"]
+    if product_id then
+      product = Product.find(product_id)
+    end
+
     @product_name = ""
     if product then
       @product_name = product.name
     end
+
+    @orderreactionreplys = CustomerVoice.orderreactionreplys 
   end
 
   def incrementtodayrepeat

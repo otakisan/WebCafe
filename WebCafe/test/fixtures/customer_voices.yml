@@ -12,3 +12,15 @@ three:
   situation: Welcome
   voice: What’s new ?
 
+orr1:
+  situation: OrderReactionReply
+  voice: Really tastes good !
+
+orr2:
+  situation: OrderReactionReply
+  voice: Actually, new for me...
+
+orr3:
+  situation: OrderReactionReply
+  voice: You too ??
+
