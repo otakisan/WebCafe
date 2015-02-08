@@ -24,6 +24,10 @@ class InStoreOperationsController < ApplicationController
       end
 
       logger.debug((@customer_voice_id ||= "")  + " was selected voice.")
+      barista_voices = BaristaVoice.replyvoices(@customer_voice.voice_attribute)
+      if barista_voices.size > 0 then
+        @barista_voice = barista_voices.first
+      end
 
       if isnextformenu?(@customer_voice.voice) then
         getproducts

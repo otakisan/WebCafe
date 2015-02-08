@@ -3,24 +3,36 @@
 one:
   situation: Welcome
   voice: Good Morning!
+  voice_attribute: greeting 
+  counter_voice_attribute: silence
 
 two:
   situation: Welcome
   voice: It’s cold today.
+  voice_attribute: greeting 
+  counter_voice_attribute: silence
 
 three:
   situation: Welcome
   voice: What’s new ?
+  voice_attribute: greeting 
+  counter_voice_attribute: silence
 
 orr1:
   situation: OrderReactionReply
   voice: Really tastes good !
+  voice_attribute: order 
+  counter_voice_attribute: silence
 
 orr2:
   situation: OrderReactionReply
   voice: Actually, new for me...
+  voice_attribute: order 
+  counter_voice_attribute: silence
 
 orr3:
   situation: OrderReactionReply
   voice: You too ??
+  voice_attribute: order 
+  counter_voice_attribute: silence
 

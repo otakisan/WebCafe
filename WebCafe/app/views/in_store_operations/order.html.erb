@@ -1,8 +1,9 @@
 <p>(order page)</p>
-<p>Sure, do you often order <%= @product_name %> ?</p>
-<p>Yummy, isn't it ?</p>
+<p>Barista: Sure, do you often order <%= @product_name %> ?</p>
+<p>Barista: Yummy, isn't it ?</p>
 
 <%= form_tag({ controller: :in_store_operations, action: :reply }, id: :reply, class: :reply) do %>
+  Customer:
   <%= select_tag 'customer_voice', options_from_collection_for_select(@orderreactionreplys, :id, :voice, 1) %>
   <%= submit_tag 'Reply' %>
 <% end %>

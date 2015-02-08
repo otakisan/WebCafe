@@ -20,5 +20,8 @@ module Cafe
       #today_repeat = session['today_repeat']
       return today_repeat > 0
     end
+
+    def generalvoice
+    end
   end
 end

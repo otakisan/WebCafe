@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+contition1:
+  situation: normal
+  voice: Not bad.
+  voice_attribute: physical_condition
+  counter_voice_attribute: greeting
+
+agreement1:
+  situation: normal
+  voice: Really! I'm think so, too.
+  voice_attribute: agreement
+  counter_voice_attribute: order
+
+appreciation1: 
+  situation: normal
+  voice: Thank you!
+  voice_attribute: appreciation 
+  counter_voice_attribute: agreement
+
+general1: 
+  situation: normal
+  voice: How are things ?
+  voice_attribute: general 
+  counter_voice_attribute: silence

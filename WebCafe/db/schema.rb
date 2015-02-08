@@ -11,13 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150207065637) do
+ActiveRecord::Schema.define(version: 20150208064634) do
+
+  create_table "barista_voices", force: true do |t|
+    t.string   "situation"
+    t.string   "voice"
+    t.string   "voice_attribute"
+    t.string   "counter_voice_attribute"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "customer_voices", force: true do |t|
     t.string   "situation"
     t.string   "voice"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "voice_attribute"
+    t.string   "counter_voice_attribute"
   end
 
   create_table "menu_details", force: true do |t|
