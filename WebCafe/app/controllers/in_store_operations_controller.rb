@@ -16,16 +16,16 @@ class InStoreOperationsController < ApplicationController
   end
 
   def reply
-    @customer_voice = params["customer_voice"]
-    if @customer_voice then
-      @customer_data = CustomerVoice.find(@customer_voice)
-      if @custmer_data then
-        logger.debug(@customer.voice)
+    customer_voice_id = params["customer_voice"]
+    if customer_voice_id then
+      @customer_voice = CustomerVoice.find(customer_voice_id)
+      if @custmer_voice then
+        logger.debug(@customer_voice.voice)
       end
 
-      logger.debug((@customer_voice ||= "")  + " was selected voice.")
+      logger.debug((@customer_voice_id ||= "")  + " was selected voice.")
 
-      if isnextformenu?(@customer_data.voice) then
+      if isnextformenu?(@customer_voice.voice) then
         getproducts
         render 'menu'
       end
