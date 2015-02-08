@@ -6,11 +6,35 @@ contition1:
   voice_attribute: physical_condition
   counter_voice_attribute: greeting
 
+weather1:
+  situation: normal
+  voice: Yes... I don't like the cold...
+  voice_attribute: weather
+  counter_voice_attribute: weather
+
+notification1:
+  situation: normal
+  voice: Yes! Sakura in this year, Coming soon!
+  voice_attribute: notification
+  counter_voice_attribute: curiosity
+
 agreement1:
   situation: normal
   voice: Really! I'm think so, too.
   voice_attribute: agreement
-  counter_voice_attribute: order
+  counter_voice_attribute: favorite
+
+agreement2:
+  situation: normal
+  voice: Good try! Surely, tastes good!
+  voice_attribute: agreement
+  counter_voice_attribute: new
+
+agreement3:
+  situation: normal
+  voice: Yes!
+  voice_attribute: agreement
+  counter_voice_attribute: question
 
 appreciation1: 
   situation: normal
