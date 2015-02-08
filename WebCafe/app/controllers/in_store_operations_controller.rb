@@ -8,7 +8,6 @@ class InStoreOperationsController < ApplicationController
   end
 
   def welcome
-    #@welcome_voice = "Good Morning!"
     today_repeat = gettodayrepeat()
     @welcome_voice = BaristaVoiceGenerator.new.welcomevoice(today_repeat)
     @customer_name = params["customer_name"]
@@ -23,8 +22,9 @@ class InStoreOperationsController < ApplicationController
       if @custmer_data then
         logger.debug(@customer.voice)
       end
+
       logger.debug((@customer_voice ||= "")  + " was selected voice.")
-#      if @customer_voice == '3' then
+
       if isnextformenu?(@customer_data.voice) then
         getproducts
         render 'menu'
@@ -33,16 +33,8 @@ class InStoreOperationsController < ApplicationController
   end
 
   def order
-=begin
-    today_repeat = session["today_repeat"]
-    if !today_repeat then
-      today_repeat = 0
-    end
-    session["today_repeat"] = today_repeat + 1
-=end
     incrementtodayrepeat
 
-    #@product_id = params["order_product"]
     product_id = params["order_product"]
     if product_id then
       product = Product.find(product_id)
@@ -82,10 +74,8 @@ class InStoreOperationsController < ApplicationController
     @menu_details = []
     if menus_result.size > 0 then
       logger.debug("menu details : " + menus_result.first.menu_details.first.product.name.to_s)
-      # かなり強引なかんじだけど、これでいいらしい 
+      # 強引なかんじだけど、これでいいらしい 
       @menu_details = menus_result.first.menu_details.map{ |detail| [detail.product.name, detail.product.id]}
-      #@menu_details = menus_result.first.menu_details.map{ |detail| Class.new do {|kls| def id detail.id end def name detail.product.name end}}
-      #Menu_Details.find(menu: menus_result.first)
     end
   end
 
