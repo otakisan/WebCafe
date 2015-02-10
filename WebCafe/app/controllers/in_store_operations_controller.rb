@@ -32,6 +32,13 @@ class InStoreOperationsController < ApplicationController
       if isnextformenu?(@customer_voice.voice) then
         getproducts
         render 'menu'
+      else
+        if @barista_voice then
+          @customer_voices = CustomerVoice.replyvoices(@barista_voice.voice_attribute)
+          if !@customer_voices || @customer_voices.size == 0 then
+            @customer_voices = CustomerVoice.breakice
+          end 
+        end
       end
     end
   end
