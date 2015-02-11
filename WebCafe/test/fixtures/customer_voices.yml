@@ -36,3 +36,9 @@ orr3:
   voice_attribute: question 
   counter_voice_attribute: silence
 
+gratitude1:
+  situation: TalkAtBar
+  voice: Thank you !
+  voice_attribute: gratitude 
+  counter_voice_attribute: agreement
+

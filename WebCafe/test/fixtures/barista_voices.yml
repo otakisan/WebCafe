@@ -42,8 +42,33 @@ appreciation1:
   voice_attribute: appreciation 
   counter_voice_attribute: agreement
 
+silence1: 
+  situation: silence
+  voice: What's wrong ?
+  voice_attribute: consideration 
+  counter_voice_attribute: silence
+
 general1: 
   situation: normal
   voice: How are things ?
   voice_attribute: general 
   counter_voice_attribute: silence
+
+general2: 
+  situation: normal
+  voice: Thank you, too !
+  voice_attribute: gratitude 
+  counter_voice_attribute: gratitude
+
+barwelcome1: 
+  situation: barwelcome
+  voice: Making your drink, now...
+  voice_attribute: general 
+  counter_voice_attribute: silence
+
+barwelcome2: 
+  situation: barwelcome
+  voice: Different than usual, isn't it ?
+  voice_attribute: question 
+  counter_voice_attribute: silence
+

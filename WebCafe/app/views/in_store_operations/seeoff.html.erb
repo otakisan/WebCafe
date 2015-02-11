@@ -1,0 +1,15 @@
+<p>(seeoff page)</p>
+<p>Barista: <%= @barista_voice.nil? ? "" : @barista_voice.voice %></p>
+<p>Barista: Have a nice day !</p>
+<%= form_tag({ controller: :in_store_operations, action: :entrance }, id: :entrance, class: :entrance) do %>
+<%
+=begin
+%>
+Customer:
+<%= select_tag 'customer_voice', options_from_collection_for_select(@customer_voices, :id, :voice, 1) %>
+<%
+=end
+%>
+  <%= submit_tag 'go entrance' %>
+<% end %>
+

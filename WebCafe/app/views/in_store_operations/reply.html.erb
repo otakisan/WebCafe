@@ -3,7 +3,7 @@
 <p>Barista: <%= @barista_voice.nil? ? "" : @barista_voice.voice %></p>
 <%= form_tag({ controller: :in_store_operations, action: :reply }, id: :reply, class: :reply) do %>
 Customer:
-<%= select_tag 'customer_voice', options_from_collection_for_select(@customer_voices, :id, :voice, 1) %>
+<%= select_tag 'customer_voice', options_from_collection_for_select(@customer_voices ||= [], :id, :voice, 1) %>
   <%= submit_tag 'talk' %>
 <% end %>
 

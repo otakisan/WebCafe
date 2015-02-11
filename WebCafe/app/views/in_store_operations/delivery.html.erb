@@ -1,0 +1,9 @@
+<p>(delivery page)</p>
+<p>Barista: Here is your drink!</p>
+<p>Barista: <%= @barista_voice.nil? ? "" : @barista_voice.voice %></p>
+<%= form_tag({ controller: :in_store_operations, action: :seeoff }, id: :seeoff, class: :seeoff) do %>
+Customer:
+<%= select_tag 'customer_voice', options_from_collection_for_select(@customer_voices, :id, :voice, 1) %>
+  <%= submit_tag 'last message' %>
+<% end %>
+

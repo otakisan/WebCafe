@@ -59,6 +59,91 @@ class InStoreOperationsController < ApplicationController
     @orderreactionreplys = CustomerVoice.orderreactionreplys 
   end
 
+  def afterorder
+    req_customer_voice = customervoicefromqueryparameters
+    @barista_voice = baristavoice(req_customer_voice) 
+    @customer_voices = customervoices(@barista_voice) 
+  end
+
+  def bar
+    barista_voices = BaristaVoice.barwelcomevoices
+    @barista_voice = choiceonerecord(barista_voices)
+
+    #req_customer_voice = customervoicefromqueryparameters
+    #@barista_voice = baristavoice(req_customer_voice) 
+    @customer_voices = customervoices(@barista_voice) 
+    return @customer_voices ||= []
+  end
+
+  def talkatbar
+    req_customer_voice = customervoicefromqueryparameters
+    @barista_voice = baristavoice(req_customer_voice) 
+    @customer_voices = customervoices(@barista_voice) 
+    logger.debug("(talkatbar) barista:" + (@barista_voice.nil? ? "(nil)" : @barista_voice.voice))
+
+    reqcv = req_customer_voice.nil? ? "" : req_customer_voice.voice
+    if isnextfordelivery?(reqcv) then
+      render 'delivery'
+    end
+  end
+
+  def delivery
+    req_customer_voice = customervoicefromqueryparameters
+    @barista_voice = baristavoice(req_customer_voice) 
+    @customer_voices = customervoices(@barista_voice) 
+  end
+
+  def seeoff
+    req_customer_voice = customervoicefromqueryparameters
+    @barista_voice = baristavoice(req_customer_voice) 
+    #@customer_voices = customervoices(@barista_voice) 
+  end
+
+  def isnextfordelivery?(voice)    
+    return voice.include?("Thank")
+  end
+
+  def customervoicefromqueryparameters
+    customer_voice_id = params["customer_voice"]
+    if customer_voice_id then
+      customer_voice = CustomerVoice.find(customer_voice_id)
+      if customer_voice then
+        logger.debug("get cv :" + customer_voice.voice)
+      end
+    end
+    return customer_voice
+  end
+
+  def baristavoice(customer_voice)
+    if customer_voice then
+      barista_voices = BaristaVoice.replyvoices(customer_voice.voice_attribute)
+      if barista_voices.size > 0 then
+        barista_voice = barista_voices.offset(rand(barista_voices.size)).first
+        logger.debug("barista:" + barista_voice.voice)
+      end
+    else
+      barista_voice = choiceonerecord(BaristaVoice.breakice)
+    end
+    return barista_voice 
+  end
+
+  def choiceonerecord(activerecord_relation)
+    if activerecord_relation != nil && activerecord_relation.size > 0 then
+      activerecord = activerecord_relation.offset(rand(activerecord_relation.size)).first
+    end
+  end
+
+  def customervoices(barista_voice)
+    if barista_voice then
+      logger.debug("from barista: " + barista_voice.voice + " attr:" + barista_voice.voice_attribute)
+      customer_voices = CustomerVoice.replyvoices(barista_voice.voice_attribute)
+      if !customer_voices || customer_voices.size == 0 then
+        customer_voices = CustomerVoice.breakice
+      end 
+    end
+    return customer_voices 
+  end
+
   def incrementtodayrepeat
     session["today_repeat"] = gettodayrepeat + 1
   end
