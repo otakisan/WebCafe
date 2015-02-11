@@ -1,5 +1,4 @@
-<p>(afterorder page)</p>
-<p>Barista: Oh! <%= @customer_voice.nil? ? "" : @customer_voice.voice %>, isn't it?</p>
+<p>- talk after the order - (afterorder page)</p>
 <p>Barista: <%= @barista_voice.nil? ? "" : @barista_voice.voice %></p>
 <%= form_tag({ controller: :in_store_operations, action: :bar }, id: :bar, class: :bar) do %>
 Customer:
