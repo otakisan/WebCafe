@@ -30,6 +30,7 @@ class InStoreOperationsController < ApplicationController
       end
 
       if isnextformenu?(@customer_voice.voice) then
+        @order_styles = [["For here", "forhere"],["To go", "togo"]]
         getproducts
         render 'menu'
       else

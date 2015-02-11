@@ -3,5 +3,6 @@
 <%= form_tag({ controller: :in_store_operations, action: :order }, id: :order, class: :order) do %>
 Customer:
 <%= select_tag 'order_product', options_for_select(@menu_details, 1) %>
+<%= select_tag 'order_style', options_for_select(@order_styles, 1) %>
   <%= submit_tag 'Order' %>
 <% end %>
