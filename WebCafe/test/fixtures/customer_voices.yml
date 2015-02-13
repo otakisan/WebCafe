@@ -42,3 +42,9 @@ gratitude1:
   voice_attribute: gratitude 
   counter_voice_attribute: agreement
 
+normal1:
+  situation: normal
+  voice: Oh! I'm looking forward to that.
+  voice_attribute: pleasure 
+  counter_voice_attribute: notification
+

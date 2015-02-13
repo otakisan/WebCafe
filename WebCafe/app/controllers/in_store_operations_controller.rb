@@ -160,7 +160,7 @@ class InStoreOperationsController < ApplicationController
   end
 
   def isnextformenu?(voice)
-    return voice.include?("Good")
+    return voice.include?("Thank")
   end
 
   def getproducts

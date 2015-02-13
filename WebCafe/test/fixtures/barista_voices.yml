@@ -60,6 +60,12 @@ general2:
   voice_attribute: gratitude 
   counter_voice_attribute: gratitude
 
+general3: 
+  situation: normal
+  voice: That's right!
+  voice_attribute: agreement 
+  counter_voice_attribute: pleasure
+
 barwelcome1: 
   situation: barwelcome
   voice: Making your drink, now...

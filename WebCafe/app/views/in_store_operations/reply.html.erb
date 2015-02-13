@@ -1,5 +1,5 @@
 <p>- small talk at the cash - (reply page)</p>
-<p>Barista: Really! <%= @customer_voice.nil? ? "" : @customer_voice.voice %>, isn't it?</p>
+<!-- <p>Barista: Really! <%= @customer_voice.nil? ? "" : @customer_voice.voice %>, isn't it?</p> -->
 <p>Barista: <%= @barista_voice.nil? ? "" : @barista_voice.voice %></p>
 <%= form_tag({ controller: :in_store_operations, action: :reply }, id: :reply, class: :reply) do %>
 Customer:
